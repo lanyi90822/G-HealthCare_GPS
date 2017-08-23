@@ -1,0 +1,322 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F0FFF0"
+    tools:context="com.example.hp.stepcount.Activity.MainMenu">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="20dp" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/web_locate"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="老人健康监护"
+            android:layout_centerHorizontal="true"
+            android:textSize="30dp"
+            android:textColor="#7CCD7C"
+            />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="20dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/locate"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/locate"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/offline_map"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/offlin_map"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/hear_wave"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/heat_wave"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="实时定位"
+            android:textSize="20dp"
+            android:textColor="#7CCD7C" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="离线地图"
+            android:textSize="20dp"
+            android:textColor="#7CCD7C" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="实时心电"
+            android:textSize="20dp"
+            android:textColor="#7CCD7C" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="30dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/textView" />
+
+        <ImageButton
+            android:id="@+id/sleep_monitor"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/history_message"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/step_count"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/divice_state"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/history_message"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/histery_message"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="睡眠监测"
+            android:textSize="20dp"
+            android:textColor="#7CCD7C"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="运动计步"
+            android:textSize="20dp"
+            android:textColor="#7CCD7C"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="历史心电"
+            android:textSize="20dp"
+            android:textColor="#7CCD7C"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/step_analyze"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/history_locate" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/fall_remand"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/fall_remand" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/system_setting"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/system_setting" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="步态分析"
+            android:textSize="20dp"
+            android:textColor="#7CCD7C"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跌倒提醒"
+            android:textSize="20dp"
+            android:textColor="#7CCD7C"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="系统设置"
+            android:textSize="20dp"
+            android:textColor="#7CCD7C"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="30dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+       <TextView
+           android:id="@+id/data_show"
+           android:layout_width="wrap_content"
+           android:layout_height="90dp"
+           android:textSize="22dp"
+           android:textColor="#7CCD7C"
+           android:background="#F0FFF0"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

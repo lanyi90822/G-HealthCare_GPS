@@ -1,0 +1,229 @@
+package com.example.hp.stepcount.Activity;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
+
+import com.example.hp.stepcount.Common.MathUtils;
+import com.example.hp.stepcount.Fall.Fall_Detection;
+import com.example.hp.stepcount.Fall.Fall_Last;
+import com.example.hp.stepcount.Fall.Fall_Test;
+import com.example.hp.stepcount.Fall.Fall_new;
+import com.example.hp.stepcount.Fall.falldata;
+import com.example.hp.stepcount.Message.ECGdiag;
+import com.example.hp.stepcount.R;
+import com.example.hp.stepcount.SQLite.ECGdiagSQLiteOpertare;
+import com.example.hp.stepcount.Service.stepcountservice;
+
+import java.io.FileInputStream;
+
+import static com.baidu.mapapi.BMapManager.getContext;
+
+public class Fall_remand extends Activity {
+
+    private static String TAG = "com.example.hp.stepcount.Activity.Fall_remand";
+    double[] saw_data = {1,1,1,1,1,1,1,1,1,1,1.03557128906250,1.03558349609375,1.03875732421875,1.04193115234375,1.04510498046875,1.04661865234375,1.04813232421875,1.04924316406250,1.05035400390625,1.05146484375000,1.05290527343750,1.05434570312500,1.05444335937500,1.05454101562500,1.05463867187500,1.05494384765625,1.05524902343750,1.05479736328125,1.05434570312500,1.05389404296875,1.05324707031250,1.05260009765625,1.05330810546875,1.05401611328125,1.05472412109375,1.05670166015625,1.05867919921875,1.06024169921875,1.06180419921875,1.06336669921875,1.06400146484375,1.06463623046875,1.06370849609375,1.06278076171875,1.06185302734375,1.05909423828125,1.05633544921875,1.05437011718750,1.05240478515625,1.05043945312500,1.04980468750000,1.04916992187500,1.04964599609375,1.05012207031250,1.05059814453125,1.05166015625000,1.05272216796875,1.05407714843750,1.05543212890625,1.05678710937500,1.05749511718750,1.05820312500000,1.05832519531250,1.05786132812500,1.05739746093750,1.05751953125000,1.05764160156250,1.05732421875000,1.05698242187500,1.05664062500000,1.05638427734375,1.05612792968750,1.05587158203125,1.05603027343750,1.05618896484375,1.05704345703125,1.05789794921875,1.05875244140625,1.05938720703125,1.06002197265625,1.06072998046875,1.06143798828125,1.06214599609375,1.06320800781250,1.06427001953125,1.06444091796875,1.06461181640625,1.06478271484375,1.06479492187500,1.06480712890625,1.06419677734375,1.06358642578125,1.06297607421875,1.06135253906250,1.05972900390625,1.05772705078125,1.05572509765625,1.05372314453125,1.05360107421875,1.05347900390625,1.05463867187500,1.05579833984375,1.05695800781250,1.05836181640625,1.05976562500000,1.06113281250000,1.06250000000000,1.06386718750000,1.06300048828125,1.06213378906250,1.05997314453125,1.05781250000000,1.05565185546875,1.05458984375000,1.05352783203125,1.05382080078125,1.05411376953125,1.05440673828125,1.05600585937500,1.05760498046875,1.05895996093750,1.06031494140625,1.06166992187500,1.06213378906250,1.06259765625000,1.06118164062500,1.05976562500000,1.05834960937500,1.05758056640625,1.05681152343750,1.05704345703125,1.05727539062500,1.05750732421875,1.05792236328125,1.05833740234375,1.05870361328125,1.05906982421875,1.05943603515625,1.05900878906250,1.05858154296875,1.05729980468750,1.05601806640625,1.05473632812500,1.05578613281250,1.05683593750000,1.05772705078125,1.05861816406250,1.05950927734375,1.05916748046875,1.05882568359375,1.05865478515625,1.05848388671875,1.05831298828125,1.05499267578125,1.05167236328125,1.05084228515625,1.05001220703125,1.04918212890625,1.05084228515625,1.05250244140625,1.05368652343750,1.05487060546875,1.05605468750000,1.05795898437500,1.05986328125000,1.06052246093750,1.06118164062500,1.06184082031250,1.06134033203125,1.06083984375000,1.06125488281250,1.06166992187500,1.06208496093750,1.06254882812500,1.06301269531250,1.06287841796875,1.06274414062500,1.06260986328125,1.05985107421875,1.05709228515625,1.05455322265625,1.05201416015625,1.04947509765625,1.04656982421875,1.04366455078125,1.04007568359375,1.03648681640625,1.03289794921875,1.02879638671875,1.02469482421875,1.01777343750000,1.01085205078125,1.00393066406250,0.996545410156250,0.989160156250000,0.983422851562500,0.977685546875000,0.971948242187500,0.969030761718750,0.966113281250000,0.964123535156250,0.962133789062500,0.960144042968750,0.955029296875000,0.949914550781250,0.941577148437500,0.933239746093750,0.924902343750000,0.916162109375000,0.907421875000000,0.902453613281250,0.897485351562500,0.892517089843750,0.892053222656250,0.891589355468750,0.893286132812500,0.894982910156250,0.896679687500000,0.899853515625000,0.903027343750000,0.902966308593750,0.902905273437500,0.902844238281250,0.899218750000000,0.895593261718750,0.892932128906250,0.890270996093750,0.887609863281250,0.882482910156250,0.877355957031250,0.872277832031250,0.867199707031250,0.862121582031250,0.856591796875000,0.851062011718750,0.840356445312500,0.829650878906250,0.818945312500000,0.801977539062500,0.785009765625000,0.764086914062500,0.743164062500000,0.722241210937500,0.706884765625000,0.691528320312500,0.685009765625000,0.678491210937500,0.671972656250000,0.668554687500000,0.665136718750000,0.657556152343750,0.649975585937500,0.642395019531250,0.624658203125000,0.606921386718750,0.579699707031250,0.552478027343750,0.525256347656250,0.503479003906250,0.481701660156250,0.478454589843750,0.475207519531250,0.471960449218750,0.475024414062500,0.478088378906250,0.485534667968750,0.492980957031250,0.500427246093750,0.513696289062500,0.526965332031250,0.546557617187500,0.566149902343750,0.585742187500000,0.586132812500000,0.586523437500000,0.549987792968750,0.513452148437500,0.476916503906250,0.436767578125000,0.396618652343750,0.349230957031250,0.301843261718750,0.254455566406250,0.235607910156250,0.216760253906250,0.426306152343750,0.635852050781250,0.845397949218750,1.37720947265625,1.90902099609375,2.38913574218750,2.86925048828125,3.34936523437500,3.50461425781250,3.65986328125000,3.59554443359375,3.53122558593750,3.46690673828125,3.09161376953125,2.71632080078125,2.55278320312500,2.38924560546875,2.22570800781250,2.27666015625000,2.32761230468750,2.34796142578125,2.36831054687500,2.38865966796875,2.39906005859375,2.40946044921875,2.30695800781250,2.20445556640625,2.10195312500000,2.08405761718750,2.06616210937500,2.15434570312500,2.24252929687500,2.33071289062500,2.37828369140625,2.42585449218750,2.36550292968750,2.30515136718750,2.24479980468750,2.13863525390625,2.03247070312500,1.85861816406250,1.68476562500000,1.51091308593750,1.34918212890625,1.18745117187500,1.06405029296875,0.940649414062500,0.817248535156250,0.798754882812500,0.780261230468750,0.769384765625000,0.758508300781250,0.747631835937500,0.779589843750000,0.811547851562500,0.856823730468750,0.902099609375000,0.947375488281250,0.975024414062500,1.00267333984375,1.02377929687500,1.04488525390625,1.06599121093750,1.06306152343750,1.06013183593750,1.07025146484375,1.08037109375000,1.09049072265625,1.08222656250000,1.07396240234375,1.07794189453125,1.08192138671875,1.08590087890625,1.08752441406250,1.08914794921875,1.08244628906250,1.07574462890625,1.06904296875000,1.06049804687500,1.05195312500000,1.04566650390625,1.03937988281250,1.03309326171875,1.02957763671875,1.02606201171875,1.02071533203125,1.01536865234375,1.01002197265625,1.01392822265625,1.01783447265625,1.02772216796875,1.03516845703125,1.04261474609375,1.05305175781250,1.06348876953125,1.07145996093750,1.08572998046875,1.10000000000000,1.09990234375000,1.09980468750000,1.09970703125000,1.09197998046875,1.08425292968750,1.06192626953125,1.03959960937500,1.01727294921875,1.00103759765625,0.984802246093750,0.979992675781250,0.975183105468750,0.970373535156250,0.985168457031250,0.999963378906250,1.02354736328125,1.04713134765625,1.07071533203125,1.07745361328125,1.08419189453125,1.07707519531250,1.06995849609375,1.06284179687500,1.02681884765625,0.990795898437500,0.973181152343750,0.955566406250000,0.937951660156250,0.940673828125000,0.943395996093750,0.962158203125000,0.980920410156250,0.999682617187500,1.04293212890625,1.08618164062500,1.11110839843750,1.13603515625000,1.16096191406250,1.15572509765625,1.15048828125000,1.12604980468750,1.10161132812500,1.07717285156250,1.05093994140625,1.02470703125000,1.01304931640625,1.00139160156250,0.989733886718750,0.991345214843750,0.992956542968750,1.00462646484375,1.01629638671875,1.02796630859375,1.03481445312500,1.04166259765625,1.04230957031250,1.04295654296875,1.04360351562500,1.04697265625000,1.05034179687500,1.05089111328125,1.05144042968750,1.05198974609375,1.05598144531250,1.05997314453125,1.05994873046875,1.05992431640625,1.05989990234375,1.05280761718750,1.04571533203125,1.03997802734375,1.03424072265625,1.02850341796875,1.01979980468750,1.01109619140625,1.01168212890625,1.01226806640625,1.01285400390625,1.02327880859375,1.03370361328125,1.04107666015625,1.04844970703125,1.05582275390625,1.06148681640625,1.06715087890625,1.06439208984375,1.06163330078125,1.05887451171875,1.05078125000000,1.04268798828125,1.03803710937500,1.03338623046875,1.02873535156250,1.02788085937500,1.02702636718750,1.02750244140625,1.02797851562500,1.02845458984375,1.03327636718750,1.03809814453125,1.03778076171875,1.03746337890625,1.03714599609375,1.03704833984375,1.03695068359375,1.03753662109375,1.03812255859375,1.03870849609375,1.03560791015625,1.03250732421875,1.03477783203125,1.03704833984375,1.03931884765625,1.04057617187500,1.04183349609375,1.04377441406250,1.04571533203125};
+    private FileInputStream mFileInputStream = null;
+    private MathUtils mMathUtils = new MathUtils();
+    private Fall_Detection mFall_Detection = new Fall_Detection();
+    private Fall_new mFall_new = new Fall_new();
+
+    private TextView result_show;
+    private falldata mfalldata;
+    private int count = 0;
+    private ImageButton fall_on_off;
+    public static boolean fall_on_off_state = true;
+    private ImageButton notice_shock;
+    public static boolean notice_shock_state = true;
+    private ImageButton notice_ring;
+    public static boolean notice_ring_state = true;
+    private static Fall_Last mFall_Last = new Fall_Last();
+    SharedPreferences sp;
+    SharedPreferences.Editor editor;
+    private stepcountservice mstepcountservice = new stepcountservice();
+
+    private ECGdiagSQLiteOpertare msqlite;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_fall_remand);
+
+        stepcountservice.notifacation_state = true;
+        mstepcountservice.StopSound();
+        sp = getSharedPreferences("sp_demo", Context.MODE_PRIVATE);
+        editor = sp.edit();
+
+        view_Init();
+        initview();
+
+//        msqlite = new ECGdiagSQLiteOpertare(getContext());
+//        ECGdiag mECGdiag = new ECGdiag();
+//        mECGdiag.setEid("18810358133");
+//        mECGdiag.setEdate("2017-07-22 12:20");
+//        mECGdiag.setEsign("心电测量数据");
+//        mECGdiag.setEresult("轻微房颤");
+//        mECGdiag.setEsuggest("注意定时检测心电，及时发现异常。");
+//        mECGdiag.setEaddress("sdcard\\data\\read");
+//        boolean result = msqlite.insertAccount(mECGdiag);
+//
+//        ECGdiag mECGdiag1 = new ECGdiag();
+//        mECGdiag1.setEid("18810358133");
+//        mECGdiag1.setEdate("2017-07-21 10:10");
+//        mECGdiag1.setEsign("心电测量数据");
+//        mECGdiag1.setEresult("心率失常");
+//        mECGdiag1.setEsuggest("加强锻炼，禁止剧烈运动。");
+//        mECGdiag1.setEaddress("sdcard\\data\\read");
+//        result = msqlite.insertAccount(mECGdiag1);
+//
+//        ECGdiag mECGdiag2 = new ECGdiag();
+//        mECGdiag2.setEid("18810358133");
+//        mECGdiag2.setEdate("2017-07-20 13:45");
+//        mECGdiag2.setEsign("心电测量数据");
+//        mECGdiag2.setEresult("心动过快");
+//        mECGdiag2.setEsuggest("请勿剧烈运动，关注心脏健康。");
+//        mECGdiag2.setEaddress("sdcard\\data\\read");
+//        result = msqlite.insertAccount(mECGdiag2);
+//
+//        ECGdiag mECGdiag3 = new ECGdiag();
+//        mECGdiag3.setEid("18810358133");
+//        mECGdiag3.setEdate("2017-07-19 08:20");
+//        mECGdiag3.setEsign("心电测量数据");
+//        mECGdiag3.setEresult("心动过快");
+//        mECGdiag3.setEsuggest("请勿剧烈运动，关注心脏健康。");
+//        mECGdiag3.setEaddress("sdcard\\data\\read");
+//        result = msqlite.insertAccount(mECGdiag3);
+//
+//        ECGdiag mECGdiag4 = new ECGdiag();
+//        mECGdiag4.setEid("18810358133");
+//        mECGdiag4.setEdate("2017-07-18 13:10");
+//        mECGdiag4.setEsign("心电测量数据");
+//        mECGdiag4.setEresult("心动过快");
+//        mECGdiag4.setEsuggest("注意定时检测心电，及时发现异常。");
+//        mECGdiag4.setEaddress("sdcard\\data\\read");
+//        result = msqlite.insertAccount(mECGdiag4);
+//        Log.w(TAG, "onCreateinsert" + " = " + result + " = " + msqlite.isExisteByIdandDate("18810358133", "2017-07-22 12:20"));
+
+
+    }
+    private int score_count(double[] da) {
+        int score_ = 0;
+        for (int i = 0; i < da.length; i++) {
+            if (da[i] > 0.516) {
+                score_++;
+            }
+        }
+        return score_;
+    }
+    private void view_Init(){
+        fall_on_off = (ImageButton)findViewById(R.id.fall_on_off);
+        notice_shock = (ImageButton)findViewById(R.id.notice_shock);
+        notice_ring = (ImageButton)findViewById(R.id.notice_ring);
+
+        fall_on_off.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                state_read();
+                if (!fall_on_off_state) {
+                    fall_on_off_state = true;
+                    fall_on_off.setBackgroundResource(R.drawable.switch_on);
+                    notice_shock.setEnabled(true);
+                    notice_ring.setEnabled(true);
+                } else {
+                    fall_on_off_state = false;
+                    fall_on_off.setBackgroundResource(R.drawable.switch_off);
+
+                    notice_shock_state = false;
+                    notice_shock.setBackgroundResource(R.drawable.switch_off);
+                    notice_shock.setEnabled(false);
+
+                    notice_ring_state = false;
+                    notice_ring.setBackgroundResource(R.drawable.switch_off);
+                    notice_ring.setEnabled(false);
+                }
+                state_save();
+            }
+        });
+        notice_shock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                state_read();
+                if (!notice_shock_state)
+                {
+                    notice_shock_state = true;
+                    notice_shock.setBackgroundResource(R.drawable.switch_on);
+                }else {
+                    notice_shock_state = false;
+                    notice_shock.setBackgroundResource(R.drawable.switch_off);
+                }
+                state_save();
+            }
+        });
+        notice_ring.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                state_read();
+                if (!notice_ring_state) {
+                    notice_ring_state = true;
+                    notice_ring.setBackgroundResource(R.drawable.switch_on);
+                } else {
+                    notice_ring_state = false;
+                    notice_ring.setBackgroundResource(R.drawable.switch_off);
+                }
+                state_save();
+            }
+        });
+    }
+
+    private void initview() {
+        state_read();
+        if (!fall_on_off_state) {
+            fall_on_off.setBackgroundResource(R.drawable.switch_off);
+            notice_shock.setBackgroundResource(R.drawable.switch_off);
+            notice_shock.setEnabled(false);
+
+            notice_ring.setBackgroundResource(R.drawable.switch_off);
+            notice_ring.setEnabled(false);
+        } else {
+            fall_on_off.setBackgroundResource(R.drawable.switch_on);
+
+            notice_shock.setEnabled(true);
+            notice_ring.setEnabled(true);
+            if (!notice_shock_state) {
+                notice_shock.setBackgroundResource(R.drawable.switch_off);
+
+            } else {
+                notice_shock.setBackgroundResource(R.drawable.switch_on);
+            }
+            if (!notice_ring_state) {
+                notice_ring.setBackgroundResource(R.drawable.switch_off);
+            } else {
+                notice_ring.setBackgroundResource(R.drawable.switch_on);
+            }
+        }
+    }
+
+    private void state_save() {
+        editor.putBoolean("remand_state", fall_on_off_state);
+        editor.putBoolean("shock_state", notice_shock_state);
+        editor.putBoolean("ring_state", notice_ring_state);
+        editor.commit();
+    }
+
+    private void state_read() {
+        fall_on_off_state = sp.getBoolean("remand_state",false);
+        notice_shock_state = sp.getBoolean("shock_state",false);
+        notice_ring_state = sp.getBoolean("ring_state",false);
+    }
+
+
+
+
+}

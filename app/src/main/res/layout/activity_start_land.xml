@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_start_land"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0FFF0"
+    tools:context="com.example.hp.stepcount.Activity.start_land">
+
+
+
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/miao"
+        android:id="@+id/imageView" />
+
+    <LinearLayout
+        android:id="@+id/land_layout"
+        android:orientation="vertical"
+        android:layout_marginTop="67dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text="用户名： "/>
+
+            <EditText
+                android:id="@+id/name_edit"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:background="@color/white"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text="密    码： "/>
+
+            <EditText
+                android:id="@+id/password_edit"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="textPassword"
+                android:background="@color/white"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="20dp" />
+
+            <Button
+                android:id="@+id/land_button"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="登录"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:background="@color/blue"/>
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+            <Button
+                android:id="@+id/register_button"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="注册"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:background="@color/blue"/>
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

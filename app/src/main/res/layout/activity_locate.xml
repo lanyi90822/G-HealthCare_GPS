@@ -1,0 +1,76 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.hp.stepcount.Activity.locate">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#1E90FF" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:text="实时定位"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            android:background="#1E90FF" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/bmapView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true" />
+
+
+        <Button
+            android:id="@+id/maker_clear"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="70dp"
+            android:background="#1E90FF"
+            android:textColor="#FFFFFF"
+            android:text="清除标记"
+            android:textSize="18dp"
+            />
+
+
+        <TextView
+            android:id="@+id/texview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"/>
+
+        <Button
+            android:id="@+id/locate"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="紧急定位"
+            android:background="#1E90FF"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/maker_clear"
+            android:layout_marginBottom="20dp"
+            />
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,136 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F0FFF0"
+    tools:context="com.example.lenovo.healthcaresystem.Activity.device_state">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#1E90FF" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:text="运动计步"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            android:background="#1E90FF" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/circle"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:id="@+id/step_count"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="__ __"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="距离（公里）："
+            android:textSize="20dp"
+            />
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="热量（千卡）："
+            android:textSize="20dp"
+            />
+        <TextView
+            android:id="@+id/energy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            />
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="20dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/data_clear"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="数据清零"
+            android:background="#1E90FF"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp"/>
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/step_stop"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="开始计步"
+            android:background="#1E90FF"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

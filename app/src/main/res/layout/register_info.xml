@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.hp.stepcount.Activity.personal_info">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#1E90FF" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:text="个人信息"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            android:background="#1E90FF" />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="30dp" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="用户名:"
+            android:textSize="20sp"
+            />
+        <EditText
+            android:id="@+id/phonenume"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:textSize="15sp"
+            android:hint=""
+            android:inputType="number"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="30dp" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="密    码:"
+            android:textSize="20sp"
+            />
+        <EditText
+            android:id="@+id/psw_edit"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:textSize="15sp"
+            android:hint=""
+            android:inputType="number"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="30dp" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="姓    名:"
+            android:textSize="20sp"
+            />
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:textSize="15sp"
+            android:hint=""
+            />
+    </LinearLayout>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="30dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="年    龄:"
+            android:textSize="20sp"
+            />
+        <EditText
+            android:id="@+id/yearold"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:textSize="15sp"
+            android:hint=""
+            android:inputType="number"
+            />
+    </LinearLayout>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="30dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="身    高:"
+            android:textSize="20sp"
+            />
+        <EditText
+            android:id="@+id/height"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:textSize="15sp"
+            android:hint="cm"
+            android:inputType="number"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="30dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="体    重:"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/weight"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:textSize="15sp"
+            android:hint="kg"
+            android:inputType="number"
+            />
+    </LinearLayout>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="30dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/setting"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="确定"
+            />
+        <Button
+            android:id="@+id/cancle"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="返回"
+            />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

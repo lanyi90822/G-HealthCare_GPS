@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="grey">#cbc9c9</color>
+    <color name="red">#b22928</color>
+    <color name="gray">#ffff0000</color>
+    <color name="purple">#551A8B</color>
+    <color name="blue">#1E90FF</color>
+    <color name="green">#B4EEB4</color>
+    <color name="yellow">#FFFF85</color>
+    <color name="light_green">#C1FFC1</color>
+    <color name="button_color">#4682B4</color>
+    <color name="titlebar_color">#0c98ad</color>
+    <color name="background_color">#c9bcb4</color>
+
+
+    <color name="fonts_color">#40a9b7</color>
+    <color name="tips_fonts_color">#97aca5</color>
+
+
+    <color name="light_blue">#7EC0EE</color>
+    <color name="tab_selected_bg">#058093</color>
+    <color name="tabrow_pressed">#cdeced</color>
+
+    <color name="tv_pressed">#B2DFEE</color>
+    <color name="tv_normal">#fbd9b0</color>
+    <color name="tv_normal_even">#e4e3e1</color>
+
+    <color name="datepicker_bg">#54b5c7</color>
+    <color name="btn_pressed_color">#4191a0</color>
+
+    <!-- 透明 -->
+    <color name="transparent">#00000000</color>
+    <!-- 深绿 -->
+    <color name="m29c741">#29c741</color>
+    <!-- 灰色 -->
+    <color name="m146621">#146621</color>
+    <!--桔黄色 -->
+    <color name="bisque">#ffe4c4</color>
+    <!--鹿皮色 -->
+    <color name="moccasin">#ffe4b5</color>
+    <!--中紫罗兰色 -->
+    <color name="mediumvioletred">#c71585</color>
+
+    <!-- home -->
+    <color name="round_progress_inner">#4ac2cc</color>
+    <color name="button_nologin_color">#B0E0E6</color>
+
+    <!-- userprofile -->
+    <color name="textview_color">#0092d0</color>
+</resources>

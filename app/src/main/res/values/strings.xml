@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">健康监护</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">设备选择</string>
+    <string name="title_activity_main_menu">健康监护</string>
+    <string name="appname">运动计步</string>
+    <string name="title_activity_fall_remand">fall_remand</string>
+    <string name="title_activity_setting">setting</string>
+    <string name="action_settin">数据保存</string>
+    <string name="title_activity_sleep">sleep</string>
+    <string name="title_activity_drawdata">drawdata</string>
+    <string name="title_activity_web">Web</string>
+    <string name="title_activity_locate">locate</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_offline_map">offline_map</string>
+    <string name="action_s">系统设置</string>
+    <string name="title_activity_personal_info">personal_info</string>
+    <string name="stepsugest">注：步态评估需在平坦路面进行直线行走，点击“开始评估”按钮后，按语音提示进行步态数据采集，在采集记录30秒的步行数据后，将自动给出评估结果。</string>
+    <string name="title_activity_history_ecg_show">history_ecg_show</string>
+</resources>

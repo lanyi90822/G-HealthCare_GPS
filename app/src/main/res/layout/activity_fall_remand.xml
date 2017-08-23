@@ -1,0 +1,109 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F0FFF0"
+    tools:context="com.example.hp.stepcount.Activity.Fall_remand">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#1E90FF" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:text="跌倒提醒"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            android:background="#1E90FF" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="30dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="16dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:text="是否启用"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            />
+        <ImageButton
+            android:id="@+id/fall_on_off"
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:background="@drawable/switch_on"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="16dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:text="震动"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            />
+        <ImageButton
+            android:id="@+id/notice_shock"
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:background="@drawable/switch_off"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="16dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:text="铃声"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            />
+        <ImageButton
+            android:id="@+id/notice_ring"
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:background="@drawable/switch_off"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

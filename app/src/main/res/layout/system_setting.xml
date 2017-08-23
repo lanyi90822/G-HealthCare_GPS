@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <EditText
+        android:id="@+id/system_phone"
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:hint="请输入文件名。。。"
+        android:inputType="textCapWords"
+        android:textSize="25dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/store_st_"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/blank_" />
+    </RelativeLayout>
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+    <Button
+        android:id="@+id/start_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始"
+        android:textSize="25dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+    <Button
+        android:id="@+id/stop_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="结束"
+        android:textSize="25dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+
+
+
+
+</LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <declare-styleable name="EcgBackgroundView">
+        <attr name="length" format="dimension"/>
+        <attr name="paintStroke" format="dimension"/>
+        <attr name="paintAlpha" format="integer"/>
+        <attr name="paintColor" format="color"/>
+    </declare-styleable>
+</resources>

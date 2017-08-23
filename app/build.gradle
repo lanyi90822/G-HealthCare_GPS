@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+
+    defaultConfig {
+        applicationId "com.example.hp.stepcount"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    useLibrary 'org.apache.http.legacy'
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile files('libs/baidumapapi_base_v3_7_3.jar')
+    compile files('libs/baidumapapi_cloud_v3_7_3.jar')
+    compile files('libs/baidumapapi_map_v3_7_3.jar')
+    compile files('libs/baidumapapi_radar_v3_7_3.jar')
+    compile files('libs/baidumapapi_search_v3_7_3.jar')
+    compile files('libs/baidumapapi_util_v3_7_3.jar')
+    compile files('libs/locSDK_6.13.jar')
+    compile files('libs/fastjson-1.1.41.jar')
+    compile files('libs/slf4j-log4j12-1.7.7.jar')
+    compile files('libs/ECGHR.jar')
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:design:24.2.1'
+}

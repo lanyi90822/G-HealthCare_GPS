@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_history_message"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F0FFF0"
+    tools:context="com.example.hp.stepcount.Activity.history_message">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#1E90FF" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:background="#1E90FF"
+            android:text="历史心电"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/history_display"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/checklinearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        
+       <Button
+           android:id="@+id/bt_cancel"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" 
+           android:text="取消选择"/>
+
+        <TextView
+            android:id="@+id/tv_sum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="共计" />
+
+        <Button
+            android:id="@+id/bt_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="删除" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
